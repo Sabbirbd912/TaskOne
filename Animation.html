@@ -6,44 +6,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anim</title>
     <style>
+        body{
+            background-color: #000;
+        }
         #boxOne {
-            position: relative;
             width: 100px;
             height: 100px;
             border: 2px solid red;
             margin-top: 20px;
             background-color: blue;
-
+            animation: pulse-box 3s linear infinite;
+        }
+        @keyframes pulse-box {
+            0%, 100%{
+                transform: scale(1);
+            }
+            50%{
+                transform: scale(1.2);
+            }
         }
 
         #boxTwo {
-            position: relative;
-            margin-top: -80px;
             width: 80px;
             height: 80px;
             border: 1px solid black;
-            background-color: transparent
-
+            background-color: aqua;
+            animation: fade 3s linear infinite;
+        }
+        @keyframes fade {
+            0%,
+            100%{
+                opacity: 0;
+            }
+            50%{
+                opacity: 1;
+            }
         }
 
         .boxThree {
-            position: relative;
-            margin-top: -60px;
             width: 40px;
             height: 40px;
             border: 1px solid black;
-            background-color: transparent
+            background-color: rgb(0, 255, 42);
+            animation: rotateBox 2s linear infinite;
+        }
 
+        @keyframes rotateBox {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
         }
 
         .boxFour {
-            position: relative;
-            margin-top: -60px;
             width: 40px;
             height: 40px;
             border: 1px solid black;
             background-color: rgb(255, 0, 64);
-            z-index: 1;
+            animation: bounce_box 12s ease-in-out infinite;
+        }
+        @keyframes bounce_box {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50%{
+                transform: translateY(800px);
+            }
         }
     </style>
 </head>
