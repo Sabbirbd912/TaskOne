@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+            --primary_color: rgba(11, 122, 250, 0.712);
+            --secondary_color: rgb(64, 64, 219);
+        }
+
+        .Container-card {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 10px;
+        }
+
+        .card {
+            height: 400px;
+            width: 300px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+            overflow: hidden
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            margin: 0;
+
+            
+        }
+
+        .card-body {
+            padding: 0 30px;
+        }
+        h3{
+            margin: 0;
+            padding: 0 0 4px 0;
+            color:var(--secondary_color)
+        }
+        button{
+            display: flex;
+            align-self: center;
+            justify-self: center;
+            padding: 6px;
+            margin-top: 2px;
+            border-radius: 8px;
+            background-color: var(--primary_color);
+            color:#ffffff
+        }
+    </style>
+</head>
+
+<body>
+    <div class="Container-card">
+        <div class="card">
+            <img src="image.png" alt="Blue-Car">
+            <div class="card-body">
+                <h3>Nissan Kicks</h3>
+                <span>Brand New &nbsp;|&nbsp; Hatchbak</span> <br>
+                <span>$24,555 &nbsp;&nbsp;&nbsp; 350sp </span> <br>
+                <i>
+                    Embark on your next adventure with unbeatable rates. With our competitive prices, you can enjoy
+                    more miles for less money, giving you the freedom you need to enjoy life
+                </i><br>
+                <button>Know More >>></button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
