@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fixed Responsive Navbar</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    /* Navbar container */
+    .navbar {
+        background-color: #003366;
+        position: fixed;   /* উপরে ফিক্সড */
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    /* Main menu */
+    .navbar ol {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+
+    .navbar ol > li {
+        position: relative;
+    }
+
+    .navbar ol > li > a {
+        display: block;
+        color: white;
+        padding: 14px 20px;
+        text-decoration: none;
+    }
+
+    .navbar ol > li > a:hover {
+        background-color: #005599;
+    }
+
+    /* Dropdown menu */
+    .navbar ol li ol {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: white;
+        min-width: 200px;
+        padding: 0;
+        margin: 0;
+        border: 1px solid #ccc;
+        z-index: 1;
+    }
+
+    .navbar ol li ol li {
+        list-style: none;
+        border-bottom: 1px solid #eee;
+    }
+
+    .navbar ol li ol li a {
+        display: block;
+        padding: 10px 15px;
+        color: #333;
+        text-decoration: none;
+    }
+
+    .navbar ol li ol li a:hover {
+        background-color: #f2f2f2;
+    }
+
+    /* Show dropdown on hover */
+    .navbar ol li:hover > ol {
+        display: block;
+    }
+
+    /* Hamburger button */
+    .toggle-btn {
+        display: none;
+        font-size: 22px;
+        color: white;
+        background: none;
+        border: none;
+        padding: 14px 20px;
+        cursor: pointer;
+    }
+
+    /* Responsive */
+    @media screen and (max-width: 768px) {
+        .navbar ol {
+            flex-direction: column;
+            display: none;
+            background-color: #003366;
+        }
+        .navbar ol li {
+            width: 100%;
+        }
+        .navbar ol li ol {
+            position: static;
+            border: none;
+        }
+        .toggle-btn {
+            display: block;
+        }
+    }
+
+    /* Body content padding (navbar এর নিচে জায়গা রাখতে হবে) */
+    .content {
+        padding: 100px 20px;
+    }
+</style>
+</head>
+<body>
+
+<div class="navbar">
+  <button class="toggle-btn" onclick="toggleMenu()">☰ Menu</button>
+  <ol id="menu">
+    <li>
+      <a href="#">NEWS & EVENTS ▾</a>
+      <ol>
+        <li><a href="#">Events</a></li>
+        <li><a href="#">Pulse</a></li>
+        <li><a href="#">Features</a></li>
+        <li><a href="#">Oxford profiles</a></li>
+        <li><a href="#">Oxford and coronavirus</a></li>
+        <li><a href="#">Filming in Oxford</a></li>
+        <li><a href="#">Find An Expert</a></li>
+      </ol>
+    </li>
+    <li>
+      <a href="#">ABOUT ▾</a>
+      <ol>
+        <li><a href="#">History</a></li>
+        <li><a href="#">Mission</a></li>
+        <li><a href="#">Team</a></li>
+      </ol>
+    </li>
+  </ol>
+</div>
+
+<div class="content">
+  <h1>Welcome to My Website</h1>
+  <p>Scroll down to see the fixed navbar working...</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi facilisis, 
+     eros nec luctus finibus, velit libero fermentum eros, non sagittis 
+     dolor urna at sapien. Integer dignissim lorem vel magna.</p>
+  <p style="height:1200px"></p>
+</div>
+
+<script>
+function toggleMenu() {
+    var menu = document.getElementById("menu");
+    if (menu.style.display === "flex" || menu.style.display === "block") {
+        menu.style.display = "none";
+    } else {
+        menu.style.display = "block";
+    }
+}
+</script>
+
+</body>
+</html>
